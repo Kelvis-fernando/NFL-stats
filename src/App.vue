@@ -1,10 +1,16 @@
 <template>
-  <h1>Hello, World</h1>
+  <Sidebar />
 </template>
 
 <script>
+// import Home from '@/pages/Home';
+import Sidebar from '@/layout/Sidebar';
+
 export default {
   name: 'App',
+  components: {
+    Sidebar,
+  }
 }
 </script>
 
