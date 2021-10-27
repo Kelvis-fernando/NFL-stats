@@ -1,4 +1,4 @@
-# nfl-stats
+# new-app
 
 ## Project setup
 ```

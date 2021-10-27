@@ -1,38 +1,37 @@
 <template>
   <div
     class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white sidebar-bg"
-    style="width: 250px;"
+    style="width: 250px"
   >
-    <a
-      href="/"
+    <router-link
+      to="/"
       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
     >
       <svg class="bi me-2" width="40" height="32"></svg>
       <span class="fs-4">NFL Stats</span>
-    </a>
+    </router-link>
     <hr />
     <ul class="nav nav-pills flex-column mb-auto">
       <li>
         <i class="fas fa-home"></i>
-        <a href="#" class="nav-link text-white" aria-current="page">
-          <i class="fas fa-home"></i><span class="ms-2">Home</span>
-        </a>
+        <router-link to="/" class="nav-link text-white mx-3" aria-current="page">
+          <i class="bi bi-house-fill"></i><span class="ms-2">Home</span>
+        </router-link>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
-          <i class="fa fa-dashboard"></i><span class="ms-2">Partidas</span>
-        </a>
+        <router-link to="/partidas" class="nav-link text-white mx-3">
+          <i class="bi bi-joystick"></i><span class="ms-2">Partidas</span>
+        </router-link>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
-          <i class="fa fa-first-order"></i
-          ><span class="ms-2">Estatisticas</span>
-        </a>
+        <router-link to="/estatisticas" class="nav-link text-white mx-3">
+          <i class="bi bi-activity"></i><span class="ms-2">Estatisticas</span>
+        </router-link>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
-          <i class="fa fa-cog"></i><span class="ms-2">Tabela</span>
-        </a>
+        <router-link to="/tabela" class="nav-link text-white mx-3">
+          <i class="bi bi-table"></i><span class="ms-2">Tabela</span>
+        </router-link>
       </li>
     </ul>
   </div>
