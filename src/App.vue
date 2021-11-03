@@ -1,8 +1,8 @@
 <template>
-  <div id="nav">
-    <Sidebar />
+  <div class="app grid grid-template-columns">
+    <Sidebar class="item" />
+    <router-view class="item" />
   </div>
-  <router-view />
 </template>
 
 <script>
@@ -13,4 +13,13 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+/* Grid Container */
+.grid {
+  display: grid;
+}
+
+.grid-template-columns {
+  grid-template-columns: 350px 600px;
+}
+</style>

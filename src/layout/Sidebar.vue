@@ -1,11 +1,17 @@
 <template>
   <div
-    class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white sidebar-bg"
+    class="flex-column vh-100 flex-shrink-0 p-3 text-white sidebar-bg"
     style="width: 250px"
   >
     <router-link
       to="/"
-      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+      class="
+        d-flex
+        align-items-center
+        mb-3 mb-md-0
+        me-md-auto
+        text-white text-decoration-none
+      "
     >
       <svg class="bi me-2" width="40" height="32"></svg>
       <span class="fs-4">NFL Stats</span>
@@ -14,7 +20,11 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <li>
         <i class="fas fa-home"></i>
-        <router-link to="/" class="nav-link text-white mx-3" aria-current="page">
+        <router-link
+          to="/"
+          class="nav-link text-white mx-3"
+          aria-current="page"
+        >
           <i class="bi bi-house-fill"></i><span class="ms-2">Home</span>
         </router-link>
       </li>
