@@ -1,7 +1,7 @@
 <template>
   <div class="app grid grid-template-columns">
     <Sidebar class="item" />
-    <router-view class="item" />
+    <router-view class="item m-3" />
   </div>
 </template>
 
