@@ -32,10 +32,12 @@
 import axios from "axios";
 
 function getMatches() {
-  let teste = { "Ocp-Apim-Subscription-Key": "c00c2adab1cb4775965c58a43cb3e5f5" };
-  const baseUrl = "https://api.sportsdata.io/v3/nfl/scores/json/TeamGameStats/2021/7";
-  axios.get(baseUrl, { headers: teste }).then((resp) => {
-    console.log(resp);
+  axios.get("https://api.sportsdata.io/v3/nfl/scores/json/TeamGameStats/2021/8", {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      "Ocp-Apim-Subscription-Key": "c00c2adab1cb4775965c58a43cb3e5f5",
+    },
   });
 }
 
