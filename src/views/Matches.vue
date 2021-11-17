@@ -1,46 +1,32 @@
 <template>
     <div class="matches w-75">
-        <div
-            class="card text-center m-2"
-            v-for="responses in response"
-            v-bind:key="responses"
-        >
-            <div class="card-header">Featured</div>
-            <div class="card-body">
-                <div class="grid grid-template-columns">
-                    <div class="teams">
-                        <h6>{{ responses.Team }}</h6>
+        <div v-for="(responses, index) in response" v-bind:key="responses">
+            <div class="card text-center m-2 align">
+                <div class="card-header">Jogo {{ index + 1 }}</div>
+                <div class="card-body">
+                    <div class="grid grid-template-columns">
+                        <div class="teams">
+                            <h6>{{ responses.TeamName.toUpperCase() }}</h6>
+                        </div>
+                        <div class="teams">
+                            <h6>{{ responses.Opponent }}</h6>
+                        </div>
                     </div>
-                    <div class="teams">
-                        <h6>{{ responses.Team }}</h6>
-                    </div>
+                    <h5 class="card-title">Resultado</h5>
+                    <p class="card-text">
+                        {{ responses.Score }} - {{ responses.ScoreOpponent }}
+                    </p>
                 </div>
-                <h5 class="card-title">Resultado</h5>
-                <p class="card-text">20 - 17</p>
-                <button @click="getMatches" class="btn btn-primary">
-                    Ver mais
-                </button>
+                <div class="card-footer text-muted">
+                    {{ responses.Date }}
+                </div>
             </div>
-            <div class="card-footer text-muted">2 days ago</div>
         </div>
     </div>
 </template>
 
 <script>
 import axios from "axios";
-
-function getMatches() {
-    const baseUrl = "http://localhost:3001/";
-    axios
-        .get(baseUrl + "partidas")
-        .then((resp) => {
-            console.log(resp.data);
-            this.response = resp.data;
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-}
 
 export default {
     inheritAttrs: false,
@@ -49,8 +35,17 @@ export default {
             response: [],
         };
     },
-    methods: {
-        getMatches,
+    created: function () {
+        const baseUrl = "http://localhost:3001/";
+        axios
+            .get(baseUrl + "partidas")
+            .then((resp) => {
+                console.log(resp.data);
+                this.response = resp.data;
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     },
 };
 </script>
@@ -64,5 +59,10 @@ export default {
 .grid-template-columns {
     grid-template-columns: 200px 200px;
     align-items: center;
+}
+
+.align {
+    display: flex;
+    flex-wrap: wrap;
 }
 </style>
