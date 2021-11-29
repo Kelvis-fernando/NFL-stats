@@ -15,6 +15,7 @@
     >
       <svg class="bi me-2" width="40" height="32"></svg>
       <span class="fs-4">NFL Stats</span>
+      <hr />
     </router-link>
     <hr />
     <ul class="nav nav-pills flex-column mb-auto">
