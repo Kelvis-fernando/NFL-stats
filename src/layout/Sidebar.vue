@@ -1,7 +1,6 @@
 <template>
   <div
-    class="flex-column vh-100 flex-shrink-0 p-3 text-white sidebar-bg"
-    style="width: 250px"
+    class="flex-column vh-100 flex-shrink-0 p-3 text-white sidebar-bg sidebar"
   >
     <router-link
       to="/"
@@ -71,5 +70,10 @@ body {
 
 .sidebar-bg {
   background-color: #2048f7;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
 }
 </style>

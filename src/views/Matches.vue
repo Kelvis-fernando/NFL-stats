@@ -36,7 +36,7 @@ export default {
     };
   },
   created: function () {
-    const baseUrl = "http://localhost:3001/";
+    const baseUrl = "http://localhost:3000/";
     axios
       .get(baseUrl + "partidas")
       .then((resp) => {
@@ -55,6 +55,8 @@ export default {
   width: 1000px;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 90px;
+
   .grid {
     display: grid;
   }
