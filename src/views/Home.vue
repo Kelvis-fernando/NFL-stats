@@ -1,6 +1,7 @@
 <template>
     <div class="home">
-        <h1>estou aqui</h1>
+        <h1>Bem vindo ao NFL Stats</h1>
+        <h1>Bem vindo ao NFL Stats</h1>
     </div>
 </template>
 
@@ -8,4 +9,10 @@
 export default {
     name: "Home",
 };
-</script>
+</script>\
+
+<style lang="scss" scoped>
+.home {
+    margin-top: 500px;
+}
+</style>
