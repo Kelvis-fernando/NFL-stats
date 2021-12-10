@@ -1,9 +1,9 @@
 <template>
   <div class="table-teams">
     <div class="nfc">
-      <div class="north">
+      <div class="north my-5">
         <h2>NFC NORTH</h2>
-        <table class="table table-dark w-50">
+        <table class="table table-dark">
           <thead>
             <tr>
               <th scope="col">Time</th>
@@ -22,9 +22,9 @@
           </tbody>
         </table>
       </div>
-      <div class="east">
+      <div class="east my-5">
         <h2>NFC NORTH</h2>
-        <table class="table table-dark w-50">
+        <table class="table table-dark">
           <thead>
             <tr>
               <th scope="col">Time</th>
@@ -43,9 +43,9 @@
           </tbody>
         </table>
       </div>
-      <div class="south">
+      <div class="south my-5">
         <h2>NFC NORTH</h2>
-        <table class="table table-dark w-50">
+        <table class="table table-dark">
           <thead>
             <tr>
               <th scope="col">Time</th>
@@ -64,9 +64,9 @@
           </tbody>
         </table>
       </div>
-      <div class="west">
+      <div class="west my-5">
         <h2>NFC NORTH</h2>
-        <table class="table table-dark w-50">
+        <table class="table table-dark">
           <thead>
             <tr>
               <th scope="col">Time</th>
@@ -116,16 +116,16 @@ export default {
 <style lang="scss" scoped>
 .nfc {
   margin-top: 100px;
-  display: grid;
-  grid-template-columns: 2fr 2fr;
+  // display: grid;
+  // grid-template-columns: 2fr 2fr;
 
-  .north,
-  .south,
-  .east,
-  .west {
-    margin: 0px 25px 25px 25px;
-    grid-template-rows: 300px 300px;
-  }
+  // .north,
+  // .south,
+  // .east,
+  // .west {
+  //   margin: 0px 25px 25px 25px;
+  //   grid-template-rows: 300px 300px;
+  // }
 }
 
 .afc {

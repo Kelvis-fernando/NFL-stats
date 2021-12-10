@@ -9,7 +9,7 @@
 export default {
     name: "Home",
 };
-</script>\
+</script>
 
 <style lang="scss" scoped>
 .home {
