@@ -1,24 +1,28 @@
 <template>
   <div class="home">
     <h1>Bem vindo ao NFL Stats</h1>
-    <h1>Bem vindo ao NFL Stats</h1>
+    <h1 class="text-center">Bem vindo ao NFL Stats</h1>
     <Carousel
       :items-to-show="3"
       :wrap-around="true"
       style="width: 900px; margin-top: 170px"
     >
-      <Slide v-for="slide in 10" :key="slide">
+      <Slide v-for="team in teams" :key="team">
         <div class="carousel__item">
           <div class="row">
             <div class="container-fluid">
               <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <h5 class="card-title">
+                    <img :src="team.WikipediaLogoUrl" alt="logo" class="logo-team">
+                  </h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ team.FullName }}</h6>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    <strong>Header Coach:</strong>
+                    {{ team.HeadCoach }}
                   </p>
+                  <span class="mx-4">{{ team.Conference }}</span>
+                  <span class="mx-4">{{ team.Division }}</span>
                 </div>
               </div>
             </div>
@@ -39,10 +43,9 @@ import { Carousel, Slide, Navigation } from "vue3-carousel";
 import Axios from "axios";
 
 function getTeamsData() {
-  Axios.get("http://localhost:3000/home")
-    .then((response) => {
-        console.log(response.data);
-    });
+  Axios.get("http://localhost:3000/").then((response) => {
+    console.log(response.data);
+  });
 }
 
 export default {
@@ -55,11 +58,27 @@ export default {
   methods: {
     getTeamsData,
   },
+  created: function () {
+    Axios.get("http://localhost:3000/").then((response) => {
+      this.teams = response.data;
+      console.log(response.data);
+    });
+  },
+  data() {
+    return {
+      teams: []
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
   margin-top: 500px;
+
+    .logo-team {
+      width: 100px;
+      border-radius: 50%;
+    }
 }
 </style>
