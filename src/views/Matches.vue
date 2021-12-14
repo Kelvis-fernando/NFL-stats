@@ -4,21 +4,17 @@
       <div class="card text-center m-2">
         <div class="card-header bg-card-header">Jogo {{ index + 1 }}</div>
         <div class="card-body">
+          <span class="mx-5 font-bold"><strong>{{ responses.Team }}</strong></span>
+          <span class="mx-5 font-bold"><strong>{{ responses.Opponent }}</strong></span>
           <div class="grid grid-template-columns">
-            <div class="teams">
-              <h6>{{ responses.TeamName.toUpperCase() }}</h6>
-            </div>
-            <div class="teams">
-              <h6>{{ responses.Opponent }}</h6>
-            </div>
           </div>
-          <h5 class="card-title">Resultado</h5>
+          <h5 class="card-title m-3">Resultado</h5>
           <p class="card-text">
             {{ responses.Score }} - {{ responses.ScoreOpponent }}
           </p>
         </div>
         <div class="card-footer text-muted">
-          {{ responses.Date }}
+          {{ responses.Date.substr(0, 10) }}
         </div>
       </div>
     </div>
@@ -40,7 +36,6 @@ export default {
     axios
       .get(baseUrl + "partidas")
       .then((resp) => {
-        console.log(resp.data);
         this.response = resp.data;
       })
       .catch((err) => {
