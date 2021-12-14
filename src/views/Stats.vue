@@ -14,7 +14,6 @@
             <th scope="col">Passes p/ Touchdown</th>
             <th scope="col">Passes Interceptados</th>
             <th scope="col">%Passes Completos</th>
-            <th scope="col">Ver mais</th>
           </tr>
         </thead>
         <tbody>
@@ -33,9 +32,6 @@
             <td class="stats-format">{{ responses.PassingTouchdowns }}</td>
             <td class="stats-format">{{ responses.PassingInterceptions }}</td>
             <td class="stats-format">{{ responses.CompletionPercentage }}</td>
-            <td class="stats-format">
-              <button class="btn btn-outline-primary">Ver Mais</button>
-            </td>
           </tr>
         </tbody>
       </table>
@@ -99,9 +95,10 @@ export default {
     margin-left: -90px;
 
     .colum-style:hover {
-      background-color: #999;
-      color: #fff;
+      background-color: rgb(224, 222, 222);
+      color: #000;
       font-weight: bold;
+      box-shadow: 7px 5px 5px rgb(185, 185, 185);
     }
 
     .stats-format {
