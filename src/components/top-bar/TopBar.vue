@@ -1,8 +1,9 @@
 <template>
     <div class="top-bar">
+        <ModalLogin v-show="showModalLogin" />
         <div class="itens" v-if="true">
             <span class="mx-5">
-                <button class="btn btn-outline-light">
+                <button class="btn btn-outline-light" @click="openModalLogin">
                     Login
                 </button>
             </span>
@@ -30,7 +31,25 @@
 </template>
 
 <script>
+import ModalLogin from '../modal-login/ModalLogin.vue';
+
+function openModalLogin() {
+    this.showModalLogin = !this.showModalLogin;
+}
+
 export default {
+    name: 'TopBar',
+    components: { 
+        ModalLogin
+    },
+    methods: {
+        openModalLogin,
+    },
+    data() {
+        return {
+            showModalLogin: false,
+        }
+    }
 }
 </script>
 
