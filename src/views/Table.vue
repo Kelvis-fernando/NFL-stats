@@ -108,6 +108,7 @@ export default {
   data() {
     return {
       NFC: [],
+      AFC: [],
     };
   },
 };
@@ -116,16 +117,6 @@ export default {
 <style lang="scss" scoped>
 .nfc {
   margin-top: 100px;
-  // display: grid;
-  // grid-template-columns: 2fr 2fr;
-
-  // .north,
-  // .south,
-  // .east,
-  // .west {
-  //   margin: 0px 25px 25px 25px;
-  //   grid-template-rows: 300px 300px;
-  // }
 }
 
 .afc {
