@@ -2,11 +2,11 @@
   <div class="home">
     <h1 class="welcome-home">Bem vindo ao NFL Stats</h1>
     <Carousel :items-to-show="3" :wrap-around="true" class="carousel-style">
-      <Slide v-for="team in teams" :key="team">
+      <Slide v-for="team in teams" :key="team" class="my-5">
         <div class="carousel__item">
           <div class="row">
             <div class="container-fluid">
-              <div class="card" style="width: 18rem">
+              <div class="card card-style">
                 <div class="card-body">
                   <h5 class="card-title">
                     <img
@@ -87,9 +87,18 @@ export default {
     margin-top: 170px;
   }
 
+  .card-style {
+    width: 16rem;
+    height: 14rem;
+    box-shadow: 5px 2px 2px rgb(148, 148, 148);
+  }
+
+  .card-style:hover {
+    box-shadow: 10px 5px 5px rgb(148, 148, 148);
+  }
+
   .logo-team {
-    width: 100px;
-    border-radius: 50%;
+    width: 70px;
   }
 }
 </style>
