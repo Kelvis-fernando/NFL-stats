@@ -1,19 +1,24 @@
 <template>
   <div class="matches">
     <div v-for="(responses, index) in response" v-bind:key="responses">
-      <div class="card text-center m-2">
-        <div class="card-header bg-card-header">Jogo {{ index + 1 }}</div>
+      <div class="card text-center m-2 card-image card-style">
         <div class="card-body">
-          <span class="mx-5 font-bold"><strong>{{ responses.Team }}</strong></span>
-          <span class="mx-5 font-bold"><strong>{{ responses.Opponent }}</strong></span>
-          <div class="grid grid-template-columns">
+          <div class="result">Game {{ index + 1 }}</div>
+          <span class="mx-5 font-bold result"
+            ><strong>{{ responses.Team }}</strong></span
+          >
+          <span class="mx-5 font-bold result"
+            ><strong>{{ responses.Opponent }}</strong></span
+          >
+          <div class="grid grid-template-columns"></div>
+          <div class="result-game">
+            <h5 class="card-title m-3">Resultado</h5>
+            <p class="card-text ">
+              {{ responses.Score }} - {{ responses.ScoreOpponent }}
+            </p>
           </div>
-          <h5 class="card-title m-3">Resultado</h5>
-          <p class="card-text">
-            {{ responses.Score }} - {{ responses.ScoreOpponent }}
-          </p>
         </div>
-        <div class="card-footer text-muted">
+        <div class="data">
           {{ responses.Date.substr(0, 10) }}
         </div>
       </div>
@@ -51,6 +56,43 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin-top: 90px;
+
+  .card-image {
+    border-radius: 50px;
+    font-size: 23px;
+    background-image: url("../assets/nfl-background.png");
+    background-size: cover;
+  }
+
+  .card-style {
+    width: 480px;
+    color: #fff;
+    box-shadow: 5px 2px 2px rgb(148, 148, 148);
+
+    .result-game {
+      background-color: rgb(121, 121, 121, 0.9);
+      width: 150px;
+      margin: 0px auto;
+    }
+
+    .result {
+      background-color: rgb(121, 121, 121, 0.9);
+      width: 100px;
+      margin: 0px auto;
+      border-radius: 30px;
+    }
+
+    .data {
+      background-color: rgb(121, 121, 121, 0.7);
+      width: 150px;
+      margin: 0px auto;
+      border-radius: 30px;
+    }
+  }
+
+  .card-style:hover {
+    box-shadow: 10px 5px 5px 5px rgb(148, 148, 148);
+  }
 
   .grid {
     display: grid;
